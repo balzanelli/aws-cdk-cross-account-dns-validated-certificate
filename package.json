@@ -1,0 +1,42 @@
+{
+  "name": "aws-cdk-dns-validated-certificate",
+  "description": "AWS CDK L3 construct for issuing a certificate through Certificate Manager using cross account Route 53 DNS validation",
+  "version": "0.1.0",
+  "author": {
+    "name": "balzanelli",
+    "url": "https://balzanel.li/"
+  },
+  "homepage": "https://github.com/balzanelli/aws-cdk-dns-validated-certificate",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/balzanelli/aws-cdk-dns-validated-certificate.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "aws",
+    "cdk",
+    "aws-cdk",
+    "aws-cdk-construct",
+    "ssl",
+    "certificate-manager",
+    "route53",
+    "dns01"
+  ],
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@types/node": "18.14.6",
+    "aws-cdk-lib": "^2.0.0",
+    "constructs": "^10.0.0",
+    "typescript": "~4.9.5"
+  },
+  "peerDependencies": {
+    "aws-cdk-lib": "^2.0.0",
+    "constructs": "^10.0.0"
+  }
+}

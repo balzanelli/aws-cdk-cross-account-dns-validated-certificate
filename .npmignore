@@ -1,0 +1,12 @@
+.github
+*.ts
+!*.d.ts
+jest.config.js
+tsconfig.json
+test
+!src/create-dns-validated-certificate/*
+src/create-dns-validated-certificate/node_modules
+
+# CDK asset staging directory
+.cdk.staging
+cdk.out
