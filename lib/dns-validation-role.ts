@@ -1,3 +1,4 @@
+import { CfnOutput } from 'aws-cdk-lib';
 import * as iam from 'aws-cdk-lib/aws-iam';
 import { Construct } from 'constructs';
 import { DnsValidationRoleProps } from './dns-validation-role-props';
@@ -27,6 +28,11 @@ export class DnsValidationRole extends Construct {
           ],
         }),
       },
+    });
+
+    new CfnOutput(this, 'RoleArn', {
+      description: 'ARN of the DNS validation IAM role',
+      value: this.role.roleArn,
     });
   }
 }
