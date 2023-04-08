@@ -1,5 +1,5 @@
 {
-  "name": "aws-cdk-dns-validated-certificate-test",
+  "name": "aws-cdk-cross-account-dns-validated-certificate-test",
   "version": "0.1.0",
   "bin": {
     "test": "bin/test.js"

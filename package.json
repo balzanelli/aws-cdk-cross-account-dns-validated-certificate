@@ -1,5 +1,5 @@
 {
-  "name": "aws-cdk-dns-validated-certificate",
+  "name": "aws-cdk-cross-account-dns-validated-certificate",
   "description": "AWS CDK L3 construct for issuing a certificate through Certificate Manager using cross account Route 53 DNS validation",
   "version": "0.1.0",
   "author": {
