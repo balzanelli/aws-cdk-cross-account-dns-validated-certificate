@@ -6,10 +6,10 @@
     "name": "balzanelli",
     "url": "https://balzanel.li/"
   },
-  "homepage": "https://github.com/balzanelli/aws-cdk-dns-validated-certificate",
+  "homepage": "https://github.com/balzanelli/aws-cdk-cross-account-dns-validated-certificate",
   "repository": {
     "type": "git",
-    "url": "https://github.com/balzanelli/aws-cdk-dns-validated-certificate.git"
+    "url": "https://github.com/balzanelli/aws-cdk-cross-account-dns-validated-certificate.git"
   },
   "license": "MIT",
   "keywords": [
