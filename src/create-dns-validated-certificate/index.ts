@@ -20,6 +20,7 @@ export interface CreateDnsValidatedCertificateResourceProperties {
   readonly AssumeRoleArn: string;
   readonly DomainName: string;
   readonly SubjectAlternativeNames: string[];
+  readonly ZoneNames?: { [domainName: string]: string };
   readonly DescribeCertificateMaxAttempts: number;
 }
 
@@ -115,11 +116,12 @@ async function createCertificate(
 
     const limit = pLimit(5);
 
-    Object.entries(groupValidationRecordsByHostedZone(options)).map(
-      ([zoneName, dnsRecords]) =>
-        limit(() =>
-          updateDnsValidationRecords(zoneName, dnsRecords, route53, 'UPSERT'),
-        ),
+    Object.entries(
+      groupValidationRecordsByHostedZone(options, props.ZoneNames),
+    ).map(([zoneName, dnsRecords]) =>
+      limit(() =>
+        updateDnsValidationRecords(zoneName, dnsRecords, route53, 'UPSERT'),
+      ),
     );
 
     console.log(`Waiting for certificate ${CertificateArn} to validate...`);

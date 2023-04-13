@@ -21,6 +21,7 @@ export function getValidationOptions(
 
 export function groupValidationRecordsByHostedZone(
   options: ACM.DomainValidation[],
+  zoneNames?: { [domainName: string]: string },
 ): {
   [zoneName: string]: ACM.ResourceRecord[];
 } {
@@ -35,7 +36,7 @@ export function groupValidationRecordsByHostedZone(
         );
       }
 
-      const zoneName = option.DomainName.replace('*.', '');
+      const zoneName = getHostedZoneName(option.DomainName, zoneNames);
 
       (records[zoneName] = records[zoneName] || []).push(option.ResourceRecord);
 
@@ -43,4 +44,17 @@ export function groupValidationRecordsByHostedZone(
     },
     {},
   );
+}
+
+export function getHostedZoneName(
+  domainName: string,
+  zoneNames?: { [domainName: string]: string },
+): string {
+  const zoneName = domainName.replace('*.', '');
+
+  if (zoneNames && zoneNames[zoneName]) {
+    return zoneNames[zoneName];
+  }
+
+  return zoneName;
 }

@@ -25,6 +25,7 @@ export class CrossAccountDnsValidatedCertificate extends Construct {
         AssumeRoleArn: props.delegationRoleArn,
         DomainName: props.domainName,
         SubjectAlternativeNames: props.subjectAlternativeNames ?? [],
+        ZoneNames: props.zoneNames,
         DescribeCertificateMaxAttempts: 10,
       },
     });
